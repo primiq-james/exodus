@@ -2512,6 +2512,7 @@ html[data-pv-contrast="high"] select:focus-visible {
 .exodus-chat-body .pv-chat-history-toolbar-btn,
 .exodus-chat-body .pv-chat-starters,
 .exodus-chat-body .pv-chat-starter-chip,
+.exodus-chat-body .pv-chat-starter-refresh,
 .exodus-chat-body .pv-chat-starters-close,
 .exodus-chat-body .pv-chat-bubble,
 .exodus-chat-body .pv-chat-message-menu-trigger,
@@ -2554,6 +2555,7 @@ html[data-pv-contrast="high"] select:focus-visible {
 
 .exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters,
 .exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-chip,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-refresh,
 .exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters-close,
 .exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-toolbar-btn,
 .exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-panel,
@@ -2609,15 +2611,20 @@ html[data-pv-contrast="high"] select:focus-visible {
 .exodus-chat-body .pv-chat-nudge-title,
 .exodus-chat-body .pv-chat-nudge-message,
 .exodus-chat-body .pv-chat-source-warning,
-.exodus-chat-body .pv-chat-quality-cue {
+.exodus-chat-body .pv-chat-quality-cue,
+.exodus-chat-body .pv-chat-starters-title {
   color: var(--exodus-text);
 }
 
 .exodus-chat-body .pv-chat-starter-chip:hover,
+.exodus-chat-body .pv-chat-starter-refresh:hover,
 .exodus-chat-body .pv-chat-starters-close:hover,
 .exodus-chat-body
   .pv-chat-widget[data-theme="light"]
   .pv-chat-starter-chip:hover,
+.exodus-chat-body
+  .pv-chat-widget[data-theme="light"]
+  .pv-chat-starter-refresh:hover,
 .exodus-chat-body
   .pv-chat-widget[data-theme="light"]
   .pv-chat-starters-close:hover,
@@ -2693,6 +2700,13 @@ html[data-pv-contrast="high"] select:focus-visible {
   color: var(--exodus-muted);
 }
 
+.exodus-chat-body .pv-chat-input:focus,
+.exodus-chat-body .pv-chat-input:focus-visible {
+  border-color: var(--exodus-border);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(91, 140, 255, 0.22);
+}
+
 .exodus-chat-body .pv-chat-citation-chip--official,
 .exodus-chat-body
   .pv-chat-widget[data-theme="light"]
@@ -2725,4 +2739,153 @@ html[data-pv-contrast="high"] select:focus-visible {
     rgba(245, 247, 255, 0.18),
     rgba(126, 249, 255, 0.8)
   );
+}
+
+/* Light mode keeps the Exodus blue identity but returns to a white CivIQ-style shell. */
+.exodus-chat-entry:has(.pv-chat-widget[data-theme="light"]) {
+  background: #f5f7ff;
+  color: #0b1020;
+}
+
+.exodus-chat-entry:has(.pv-chat-widget[data-theme="light"]) .exodus-chat-window,
+.exodus-chat-entry:has(.pv-chat-widget[data-theme="light"]) .exodus-chat-header,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] {
+  background: #f5f7ff;
+  color: #0b1020;
+}
+
+.exodus-chat-entry:has(.pv-chat-widget[data-theme="light"]) .exodus-chat-header {
+  border-bottom-color: rgba(91, 140, 255, 0.22);
+  background: #ffffff;
+}
+
+.exodus-chat-entry:has(.pv-chat-widget[data-theme="light"]) .exodus-chat-header p,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-empty,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-composer-meta,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-copy,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-private-toggle,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-empty,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-foot p,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-meta,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-preview,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-group-title {
+  color: #64708f;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-messages,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-controls {
+  background: #f5f7ff;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-controls {
+  border-top-color: rgba(91, 140, 255, 0.22);
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-bubble--bot,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-message-menu-panel,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-panel,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-drawer,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-settings,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-overflow [role="menu"],
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-switch-skeleton {
+  border-color: rgba(91, 140, 255, 0.22);
+  background: #ffffff;
+  color: #0b1020;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-chip,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-refresh,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters-close,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-toolbar-btn,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-message-menu-trigger,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-message-menu-panel button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-jump-bottom,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-citation-chip,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-handoff-actions a,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-handoff-actions button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-nudge-cta,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-size-presets button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-select,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-theme-toggle,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-input,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-drawer-head button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-item,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-actions button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-settings-trigger,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-search,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-icon-btn,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-settings button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-overflow > button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-overflow [role="menu"] button,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-rename-form input,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-rename-form button {
+  border-color: rgba(91, 140, 255, 0.24);
+  background: #ffffff;
+  color: #0b1020;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-chip:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starter-refresh:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters-close:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-toolbar-btn:hover:not(:disabled),
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-message-menu-panel button:hover:not(:disabled),
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-jump-bottom:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-item:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-icon-btn:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-overflow [role="menu"] button:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-theme-toggle:hover,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-select:hover {
+  border-color: rgba(91, 140, 255, 0.45);
+  background: rgba(91, 140, 255, 0.08);
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-bubble--user,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-send,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-send:hover:not(:disabled),
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-size-presets button.is-active,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-new,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-message-menu-trigger.is-open,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-item.is-active {
+  border-color: rgba(91, 140, 255, 0.9);
+  background: #5b8cff;
+  color: #ffffff;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-starters-title,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-handoff-title,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-citations-title,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-markdown a,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-copy a,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-last-verified {
+  color: #315ed8;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-nudge,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-source-warning,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-quality-cue,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-handoff,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-citation-chip--official {
+  border-color: rgba(91, 140, 255, 0.3);
+  background: rgba(91, 140, 255, 0.08);
+  color: #0b1020;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-input::placeholder,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-history-search::placeholder {
+  color: #7a86a6;
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-input:focus,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-input:focus-visible {
+  border-color: rgba(91, 140, 255, 0.24);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(91, 140, 255, 0.16);
+}
+
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-send--stop,
+.exodus-chat-body .pv-chat-widget[data-theme="light"] .pv-chat-send--stop:hover:not(:disabled) {
+  border-color: rgba(91, 140, 255, 0.35);
+  background: #ffffff;
+  color: #315ed8;
 }
