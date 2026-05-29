@@ -2433,6 +2433,7 @@ html[data-pv-contrast="high"] select:focus-visible {
   margin: 2px 0 0;
   font-size: 12px;
   line-height: 1.2;
+  font-weight: 700;
   color: rgba(204, 251, 241, 0.95);
 }
 

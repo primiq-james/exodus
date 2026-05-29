@@ -11,7 +11,7 @@ export default function DemoHome() {
           </div>
           <div className="exodus-chat-title">
             <h1>Exodus Assistant</h1>
-            <p>Online now</p>
+            <p>Escape. Manual. Tasks.</p>
           </div>
         </header>
 
